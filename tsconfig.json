@@ -1,0 +1,83 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "preserve", //tsx配置
+    "jsxFactory": "h", //tsx配置
+    "jsxFragmentFactory": "Fragment", //tsx配置
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    // target 用来指定被编译为的ES的版本
+    // module 指定要使用的模块化的规范 , 生成代码的模板标准
+    //  'none' 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'esnext'.
+    // lib用来指定项目中要使用的库
+    // "lib": []
+    // outDir 用来制动编译后文件所在的目录 , 指定输出目录
+    "outDir": "./dist",
+    // 将代码合并为一个文件  设置outFile后，所有的全局作用域中的代码回合并到同一个文件中
+    // "outFile": "./dist/app.js"
+
+    // 是否对js文件镜像编译,默认false, 允许编译器编译JS，JSX文件
+    "allowJs": true,
+    // 是否检查js代码是否符合语法规范,默认false,允许在JS文件中报错，通常与allowJS一起使用
+    "checkJs": true,
+    // 是否去掉注释 默认false
+    "removeComments": true,
+    //不生成编译后的文件 默认false ,不输出文件,即编译后不会生成任何js文件
+    // 当有错误时不生成编译后文件,发送错误时不输出任何文件
+    "noEmitOnError": false,
+    // 所有严格模式的总开关,开启所有严格的类型检查
+    // 用来设置编译后的文件是否使用严格模式，默认false,在代码中注入'use strict'
+    "alwaysStrict": false,
+    //不允许隐式的any类型
+    "noImplicitAny": false,
+    // 不允许不明确的this,不允许this有隐式的any类型
+    "noImplicitThis": false,
+    // 严格的检查空值,不允许把null、undefined赋值给其他类型的变量
+    "strictNullChecks": true,
+    "incremental": true, // TS编译器在第一次编译之后会生成一个存储编译信息的文件，第二次编译会在第一次的基础上进行增量编译，可以提高编译的速度
+    "tsBuildInfoFile": "./buildFile", // 增量编译文件的存储位置
+    "diagnostics": true,
+    "rootDir": "./", // 指定输出文件目录(用于输出)，用于控制输出目录结构
+    // "declaration": true, // 生成声明文件，开启后会自动生成声明文件
+    // "declarationMap": true, // 为声明文件生成sourceMap
+    "typeRoots": [], // 声明文件目录，默认时node_modules/@types
+    "types": [], // 加载的声明文件包
+    "noEmitHelpers": true, // 不生成helper函数，减小体积，需要额外安装，常配合importHelpers一起使用
+    "importHelpers": true, // 通过tslib引入helper函数，文件必须是模块
+    "downlevelIteration": true, // 降级遍历器实现，如果目标源是es3/5，那么遍历器会有降级的实现
+    "strictFunctionTypes": true, // 不允许函数参数双向协变
+    "strictPropertyInitialization": true, // 类的实例属性必须初始化
+    "strictBindCallApply": true, // 严格的bind/call/apply检查
+    "noUnusedParameters": true, // 检查未使用的函数参数(只提示不报错)
+    "noFallthroughCasesInSwitch": true, // 防止switch语句贯穿(即如果没有break语句后面不会执行)
+    "noImplicitReturns": true, //每个分支都会有返回值
+    "allowUmdGlobalAccess": true, // 允许在模块中全局变量的方式访问umd模块
+    "rootDirs": ["src", "out"], // 将多个目录放在一个虚拟目录下，用于运行时，即编译后引入文件的位置可能发生变化，这也设置可以虚拟src和out在同一个目录下，不用再去改变路径也不会报错
+    "listEmittedFiles": true, // 打印输出文件
+    "listFiles": true, // 打印编译的文件(包括引用的声明文件)
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "paths": {
+    "@": ["./src"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/*.vue",
+    "./auto-imports.d.ts"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
