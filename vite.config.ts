@@ -24,5 +24,14 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
       '*': path.resolve('')
     },
-  }
+  },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://echarts.apache.org",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 })

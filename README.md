@@ -1,3 +1,18 @@
+# 各个页面切换
+## 在@/src/layout/content中切换
+- ## aaa 演示基本语法的
+- ## bbb 演示父子调用的 
+- ## ccc 演示组件使用
+- ## ddd 写slot的
+- ## eee 写teleport和keep-alive
+- ## fff 写transition,transitiongroup变换的
+- ## ggg provide和inject和全局事件总线
+- ## hhh tsxye页面
+- ## iii v-model在父子组件使用
+- ## jjj directive自定义指令使用
+- ## kkk pinia使用
+- ## lll echarts地图的使用，第三方地图和百度地图
+
 # Vue 3 + TypeScript + Vite
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
